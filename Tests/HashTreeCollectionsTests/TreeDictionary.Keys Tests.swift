@@ -10,12 +10,8 @@
 //===----------------------------------------------------------------------===//
 
 import XCTest
-#if COLLECTIONS_SINGLE_MODULE
 import Collections
-#else
 import _CollectionsTestSupport
-import HashTreeCollections
-#endif
 
 class TreeDictionaryKeysTests: CollectionTestCase {
   func test_BidirectionalCollection_fixtures() {
@@ -37,15 +33,11 @@ class TreeDictionaryKeysTests: CollectionTestCase {
     ]
 
     if d.first!.key == "a" {
-      expectEqual(d.keys.description, "[a, b]")
-      expectEqual(
-        d.keys.debugDescription,
-        "TreeDictionary<String, Int>.Keys([\"a\", \"b\"])")
+      expectEqual(d.keys.description, #"["a", "b"]"#)
+      expectEqual(d.keys.debugDescription, #"["a", "b"]"#)
     } else {
-      expectEqual(d.keys.description, "[b, a]")
-      expectEqual(
-        d.keys.debugDescription,
-        "TreeDictionary<String, Int>.Keys([\"b\", \"a\"])")
+      expectEqual(d.keys.description, #"["b", "a"]"#)
+      expectEqual(d.keys.debugDescription, #"["b", "a"]"#)
     }
   }
 

@@ -11,17 +11,18 @@
 
 import XCTest
 
-#if !COLLECTIONS_SINGLE_MODULE && DEBUG
 @testable import _CollectionsTestSupport
-#endif
-
-#if COLLECTIONS_SINGLE_MODULE || DEBUG
+//
+#if DEBUG
 final class UtilitiesTests: CollectionTestCase {
   func testIntegerSquareRoot() {
     withSome("i", in: 0 ..< Int.max, maxSamples: 100_000) { i in
       let s = i._squareRoot()
       expectLessThanOrEqual(s * s, i)
-      expectGreaterThan((s + 1) * (s + 1), i)
+      let next = (s + 1).multipliedReportingOverflow(by: s + 1)
+      if !next.overflow {
+        expectGreaterThan(next.partialValue, i)
+      }
     }
   }
 }

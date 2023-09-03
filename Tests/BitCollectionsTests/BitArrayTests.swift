@@ -10,12 +10,8 @@
 //===----------------------------------------------------------------------===//
 
 import XCTest
-#if COLLECTIONS_SINGLE_MODULE
 @_spi(Testing) import Collections
-#else
 import _CollectionsTestSupport
-@_spi(Testing) import BitCollections
-#endif
 
 extension BitArray {
   static func _fromSequence<S: Sequence>(
@@ -934,13 +930,13 @@ final class BitArrayTests: CollectionTestCase {
 
   func test_debugDescription() {
     let a: BitArray = []
-    expectEqual("\(String(reflecting: a))", "BitArray()")
+    expectEqual("\(String(reflecting: a))", "[]")
 
     let b: BitArray = [true, false, true, true, true]
-    expectEqual("\(String(reflecting: b))", "BitArray(11101)")
+    expectEqual("\(String(reflecting: b))", "11101")
 
     let c: BitArray = [false, false, false, false, true, true, true, false]
-    expectEqual("\(String(reflecting: c))", "BitArray(01110000)")
+    expectEqual("\(String(reflecting: c))", "01110000")
   }
 
   func test_mirror() {

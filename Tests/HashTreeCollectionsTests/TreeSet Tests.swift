@@ -9,12 +9,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if COLLECTIONS_SINGLE_MODULE
 import Collections
-#else
 import _CollectionsTestSupport
-import HashTreeCollections
-#endif
 
 extension TreeSet: SetAPIExtras {}
 
@@ -87,11 +83,11 @@ class TreeSetTests: CollectionTestCase {
   func test_descriptions() {
     let empty: TreeSet<Int> = []
     expectEqual(empty.description, "[]")
-    expectEqual(empty.debugDescription, "TreeSet<Int>([])")
+    expectEqual(empty.debugDescription, "[]")
 
     let a: TreeSet = ["a"]
-    expectEqual(a.description, "[a]")
-    expectEqual(a.debugDescription, "TreeSet<String>([\"a\"])")
+    expectEqual(a.description, #"["a"]"#)
+    expectEqual(a.debugDescription, #"["a"]"#)
   }
 
   func test_index_descriptions() {

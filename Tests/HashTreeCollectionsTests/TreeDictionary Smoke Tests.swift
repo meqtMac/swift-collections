@@ -9,12 +9,9 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if COLLECTIONS_SINGLE_MODULE
 import Collections
-#else
 import _CollectionsTestSupport
-import HashTreeCollections
-#endif
+
 
 extension TreeDictionary {
   fileprivate func contains(_ key: Key) -> Bool {

@@ -9,9 +9,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if !COLLECTIONS_SINGLE_MODULE
-import _CollectionsUtilities
-#endif
+//import _CollectionsUtilities
+import Collections
 
 extension RandomAccessCollection {
   #if SWIFT_PACKAGE

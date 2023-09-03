@@ -10,9 +10,7 @@
 //===----------------------------------------------------------------------===//
 
 import XCTest
-#if !COLLECTIONS_SINGLE_MODULE
 import _CollectionsTestSupport
-#endif
 
 class CombinatoricsTests: CollectionTestCase {
   func testEverySubset_smoke() {

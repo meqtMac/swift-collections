@@ -10,12 +10,8 @@
 //===----------------------------------------------------------------------===//
 
 import XCTest
-#if COLLECTIONS_SINGLE_MODULE
 import Collections
-#else
 import _CollectionsTestSupport
-import HeapModule
-#endif
 
 extension Heap {
   func itemsInAscendingOrder() -> [Element] {

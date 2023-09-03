@@ -9,12 +9,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-#if COLLECTIONS_SINGLE_MODULE
 import Collections
-#else
 import _CollectionsTestSupport
-import HashTreeCollections
-#endif
 
 extension TreeDictionary: DictionaryAPIExtras {}
 
@@ -471,20 +467,14 @@ class TreeDictionaryTests: CollectionTestCase {
 
   func test_CustomDebugStringConvertible() {
     let a: TreeDictionary<Int, Int> = [:]
-    expectEqual(
-      a.debugDescription,
-      "TreeDictionary<Int, Int>([:])")
+    expectEqual(a.debugDescription, "[:]")
 
     let b: TreeDictionary<Int, Int> = [0: 1]
-    expectEqual(
-      b.debugDescription,
-      "TreeDictionary<Int, Int>([0: 1])")
+    expectEqual(b.debugDescription, "[0: 1]")
 
     let c: TreeDictionary<Int, Int> = [0: 1, 2: 3, 4: 5]
     let cd = c.map { "\($0.key): \($0.value)"}.joined(separator: ", ")
-    expectEqual(
-      c.debugDescription,
-      "TreeDictionary<Int, Int>([\(cd)])")
+    expectEqual(c.debugDescription, "[\(cd)]")
   }
 
 

@@ -11,12 +11,7 @@
 
 #if DEBUG // These unit tests need access to HeapModule internals
 import XCTest
-#if COLLECTIONS_SINGLE_MODULE
 @testable import Collections
-#else
-@testable import HeapModule
-#endif
-
 class HeapNodeTests: XCTestCase {
   func test_levelCalculation() {
     // Check alternating min and max levels in the heap

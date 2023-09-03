@@ -9,17 +9,8 @@
 
 - ``init()``
 - ``init(minimumCapacity:persistent:)``
-- ``init(uniqueKeysWithValues:)-5ux9r``
-- ``init(uniqueKeysWithValues:)-88mzi``
-- ``init(uncheckedUniqueKeysWithValues:)-6gxhj``
-- ``init(uncheckedUniqueKeysWithValues:)-2j0dw``
-- ``init(uncheckedUniqueKeysWithValues:)-6gxhj``
 - ``init(uniqueKeys:values:)``
 - ``init(uncheckedUniqueKeys:values:)``
-- ``init(_:uniquingKeysWith:)-2y39b``
-- ``init(_:uniquingKeysWith:)-zhfp``
-- ``init(grouping:by:)-6mahw``
-- ``init(grouping:by:)-6m2zw``
 
 ### Inspecting a Dictionary
 
@@ -56,15 +47,8 @@
 - ``removeLast()``
 - ``removeFirst(_:)``
 - ``removeLast(_:)``
-- ``removeSubrange(_:)-512n3``
-- ``removeSubrange(_:)-8rmzx``
 
 ### Combining Dictionaries
-
-- ``merge(_:uniquingKeysWith:)-6ka2i``
-- ``merge(_:uniquingKeysWith:)-9wkad``
-- ``merging(_:uniquingKeysWith:)-4z49c``
-- ``merging(_:uniquingKeysWith:)-2e0xa``
 
 ### Comparing Dictionaries
 
@@ -94,4 +78,3 @@
 
 - ``Index``
 - ``Values-swift.struct``
-- ``Elements-swift.struct``
